@@ -1,5 +1,7 @@
 package com.microservices.account_service.api;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,31 +22,35 @@ import com.microservices.account_service.entity.Account;
  */
 public class AccountApi {
 
-	
 	private final AccountService accountService;
-	
+
 	public AccountApi(AccountService accountService) {
 		this.accountService = accountService;
 	}
-	
+
 	@GetMapping("/{id}")
 	public ResponseEntity<Account> get(@PathVariable("id") String id) {
 		return ResponseEntity.ok(accountService.get(id));
 	}
-	
+
+	@GetMapping
+	public ResponseEntity<List<Account>> findAll() {
+		return ResponseEntity.ok(accountService.findAll());
+	}
+
 	@PostMapping
 	public ResponseEntity<Account> save(@RequestBody Account account) {
 		return ResponseEntity.ok(accountService.save(account));
 	}
-	
+
 	@PutMapping
-	public ResponseEntity<Account> update(Account account) {
-		return ResponseEntity.ok(accountService.update(account));
+	public ResponseEntity<Account> update(String id) {
+		return ResponseEntity.ok(accountService.update(id));
 	}
-	
+
 	@DeleteMapping
 	public void delete(String id) {
 		accountService.delete(id);
 	}
-	
+
 }
