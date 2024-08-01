@@ -21,7 +21,7 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 
     @Override
     protected String getKeyspaceName() {
-        // Keyspace adını çift tırnak içine almak için kaçış karakterleri ekleyin
+        
         return "\"" + keyspaceName + "\"";
     }
     

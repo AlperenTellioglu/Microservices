@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.microservices.account_service.business.AccountService;
+import com.microservices.account_service.dao.request.CreateAccountRequest;
+import com.microservices.account_service.dao.response.GetAllAccountsResponse;
 import com.microservices.account_service.entity.Account;
 
 @RestController
@@ -34,13 +36,13 @@ public class AccountApi {
 	}
 
 	@GetMapping
-	public ResponseEntity<List<Account>> findAll() {
+	public ResponseEntity<List<GetAllAccountsResponse>> findAll() {
 		return ResponseEntity.ok(accountService.findAll());
 	}
 
 	@PostMapping
-	public ResponseEntity<Account> save(@RequestBody Account account) {
-		return ResponseEntity.ok(accountService.save(account));
+	public ResponseEntity<Account> save(@RequestBody CreateAccountRequest createAccountRequest) {
+		return ResponseEntity.ok(accountService.save(createAccountRequest));
 	}
 
 	@PutMapping

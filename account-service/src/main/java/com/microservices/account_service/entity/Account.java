@@ -1,7 +1,7 @@
 package com.microservices.account_service.entity;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import org.springframework.data.cassandra.core.mapping.Column;
@@ -16,6 +16,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
@@ -23,29 +24,26 @@ import lombok.ToString;
 @Table(value = "accounts")
 public class Account implements Serializable {
 
-	@PrimaryKey
-	private String id = UUID.randomUUID().toString();
+    @PrimaryKey
+    private UUID id = UUID.randomUUID();
 
-	@Setter
-	@Column(value = "uname")
-	private String username;
+    @Column(value = "uname")
+    private String username;
 
-	@Setter
-	@Column(value = "email")
-	private String email;
+    @Column(value = "email")
+    private String email;
 
-	@Setter
-	@Column(value = "pwd")
-	private String password;
-	
-	@Column(value = "created_at")
-	private Date createdAt;
-	
-	@Column(value = "is_active")
-	private Boolean active;
+    @Column(value = "pwd")
+    private String password;
+    
+    @Column(value = "created_at")
+    private LocalDateTime createdAt;
+    
+    @Column(value = "is_active")
+    private Boolean active;
 
-	public Account(String id) {
-		this.id = id;
-	}
+    public Account(UUID id) {
+        this.id = id;
+    }
 
 }
