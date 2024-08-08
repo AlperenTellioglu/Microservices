@@ -26,6 +26,7 @@
 		<module>account-service</module>
 		<!-- Diğer modülleri buraya ekleyin -->
 		<module>config-server</module>
+		<module>eureka-server</module>
 	</modules>
 
 	<dependencyManagement>
