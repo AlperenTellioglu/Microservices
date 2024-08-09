@@ -1,4 +1,4 @@
-package com.microservices.account_service.dao.response;
+package com.microservices.account_service.dto.response;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

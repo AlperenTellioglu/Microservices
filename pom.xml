@@ -27,6 +27,7 @@
 		<!-- Diğer modülleri buraya ekleyin -->
 		<module>config-server</module>
 		<module>eureka-server</module>
+		<module>ticket-service</module>
 	</modules>
 
 	<dependencyManagement>

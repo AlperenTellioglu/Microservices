@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.microservices.account_service.business.AccountService;
-import com.microservices.account_service.dao.request.CreateAccountRequest;
-import com.microservices.account_service.dao.response.GetAllAccountsResponse;
+import com.microservices.account_service.dto.request.CreateAccountRequest;
+import com.microservices.account_service.dto.response.GetAllAccountsResponse;
 import com.microservices.account_service.entity.Account;
 
 @RestController

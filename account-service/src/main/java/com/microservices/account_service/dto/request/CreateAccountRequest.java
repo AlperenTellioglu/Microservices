@@ -1,4 +1,4 @@
-package com.microservices.account_service.dao.request;
+package com.microservices.account_service.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

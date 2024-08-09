@@ -6,9 +6,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.microservices.account_service.dao.request.CreateAccountRequest;
-import com.microservices.account_service.dao.response.GetAllAccountsResponse;
 import com.microservices.account_service.dataAccess.AccountRepository;
+import com.microservices.account_service.dto.request.CreateAccountRequest;
+import com.microservices.account_service.dto.response.GetAllAccountsResponse;
 import com.microservices.account_service.entity.Account;
 
 import lombok.AllArgsConstructor;
