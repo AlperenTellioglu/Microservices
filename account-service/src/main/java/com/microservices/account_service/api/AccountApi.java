@@ -1,6 +1,7 @@
 package com.microservices.account_service.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,7 +32,7 @@ public class AccountApi {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Account> get(@PathVariable("id") String id) {
+	public ResponseEntity<Account> get(@PathVariable("id") UUID id) {
 		return ResponseEntity.ok(accountService.get(id));
 	}
 
@@ -46,7 +47,7 @@ public class AccountApi {
 	}
 
 	@PutMapping
-	public ResponseEntity<Account> update(String id) {
+	public ResponseEntity<Account> update(UUID id) {
 		return ResponseEntity.ok(accountService.update(id));
 	}
 

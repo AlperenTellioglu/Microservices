@@ -3,6 +3,7 @@ package com.microservices.account_service.business;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class AccountService {
 
 	private AccountRepository accountRepository;
 	
-	public Account get(String id) {
+	public Account get(UUID id) {
 		return accountRepository.findById(id).orElseThrow();
 		
 	}
@@ -36,7 +37,7 @@ public class AccountService {
 		return accountRepository.save(account);
 	}
 	
-	public Account update(String id) {
+	public Account update(UUID id) {
 		
 		Account account = accountRepository.findById(id).orElseThrow();
 		
